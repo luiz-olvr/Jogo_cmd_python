@@ -1,5 +1,5 @@
 from random import randint
-from Arquivos.Config.Funções import JogarDado
+from Config.Funções import JogarDado
 class Personagem:
    def __init__(self,raca, cor, tamanho): 
       self.cor = cor
