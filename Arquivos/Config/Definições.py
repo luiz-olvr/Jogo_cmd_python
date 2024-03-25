@@ -1,12 +1,17 @@
 from random import randint
 from Config.Funções import JogarDado
 class Personagem:
-   def __init__(self,raca, cor, tamanho): 
-      self.cor = cor
-      self.ListaCor = ["AMARELO", "VERMELHO", "AZUL", "VERDE", "ROSA", "MARROM"]
+   def __init__(self,raca, cor, tamanho, arma, armadura): 
       self.tamanho = tamanho
+      self.cor = cor
+      self.ListaCor = ["AMARELO", "VERMELHO", "AZUL", "VERDE", "ROSA", "MORENO"]
       self.raca = raca
       self.ListaRaca = ["HUMANO", "ORC", "GIGANTE", "DRAGONETE", "FADA"]
+      self.arma = arma
+      self.ListaArma = ["MÃO", "ESPADA CURTA", "ESPADA LONGA", "ADAGA"]
+      self.armadura = armadura
+      self.ListaArmadura = ["ARMADURA LEVE", "ARMADURA PESADA", "SEM ARMADURA"]
+      
    def Mudarcor(self, nova_cor):
       if nova_cor in self.ListaCor:
          self.cor = nova_cor
@@ -24,11 +29,17 @@ class Personagem:
          self.raca = nova_raca
       else:
          print("Raça invalida!")
+      
+   def TrocarArma(self, nova_arma):
+      if nova_arma in self.ListaArma:
+         self.arma = nova_arma
    
    def MostrarInfo(self):
         print(self.cor)
         print(self.tamanho,"cm")
         print(self.raca)
+        print(self.arma)
+        print(self.armadura)
        
 
-cliente = Personagem("HUMANO","AMARELO", 130)
+cliente = Personagem("HUMANO","MORENO", 145, "MÃO", "SEM ARMADURA")
