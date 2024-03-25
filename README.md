@@ -1,2 +1,2 @@
 # Jogo_cmd_python
- Tentativa de jogo no terminal
+O jogo ainda está em desinvolvimento, qualquer erro mande um email para luizrolvr@gmail.com 
