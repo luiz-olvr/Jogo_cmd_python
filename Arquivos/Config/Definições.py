@@ -30,9 +30,13 @@ class Personagem:
       else:
          print("Raça invalida!")
       
-   def TrocarArma(self, nova_arma):
+   def MudarArma(self, nova_arma):
       if nova_arma in self.ListaArma:
          self.arma = nova_arma
+         
+   def MudarArmadura(self, nova_armadura):
+      if nova_armadura in self.ListaArmadura:
+         self.armadura = nova_armadura
    
    def MostrarInfo(self):
         print(self.cor)

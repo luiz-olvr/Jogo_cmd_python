@@ -19,4 +19,4 @@ def ParImpar():
       return 0
 
 def JogarDado():
-   print(randint(1, 20))
+   return randint(1, 20)
