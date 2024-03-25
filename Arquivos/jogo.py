@@ -1,5 +1,5 @@
-from Definições import *
-from Funções import JogarDado
+from Arquivos.Config.Definições import *
+from Arquivos.Config.Funções import JogarDado
 while True:  
     dado = randint(1, 20)
     cliente.Mudarcor(str(input("Digite sua cor: ")).upper().strip())

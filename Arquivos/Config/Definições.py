@@ -1,9 +1,9 @@
 from random import randint
-from Funções import JogarDado
+from Arquivos.Config.Funções import JogarDado
 class Personagem:
    def __init__(self,raca, cor, tamanho): 
       self.cor = cor
-      self.ListaCor = ["AMARELO", "VERMELHO", "AZUL", "VERDE"]
+      self.ListaCor = ["AMARELO", "VERMELHO", "AZUL", "VERDE", "ROSA", "MARROM"]
       self.tamanho = tamanho
       self.raca = raca
       self.ListaRaca = ["HUMANO", "ORC", "GIGANTE", "DRAGONETE", "FADA"]
