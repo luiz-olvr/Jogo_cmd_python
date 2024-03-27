@@ -41,11 +41,13 @@ class Personagem:
         print(f"Armadura: \033[32m{itens.armadura}\033[m \n\n")
         
 class armas_armaduras:
-   def __init__(self, arma, armadura):
+   def __init__(self, arma, armadura, arremessaveis):
       self.arma = arma
       self.ListaArma = ["MÃO", "ESPADA CURTA", "ESPADA LONGA", "ADAGA"]
       self.armadura = armadura
       self.ListaArmadura = ["ARMADURA LEVE", "ARMADURA PESADA", "SEM ARMADURA"]
+      self.arremessaveis = arremessaveis
+      self.ListaArre = ["ESPINHOS"]
       
    def MudarArma(self, nova_arma):
       if nova_arma in self.ListaArma:
@@ -63,6 +65,6 @@ class armas_armaduras:
       for i in self.ListaArmadura:
          print(f"\n \033[0;32m{i}\033[m")
 
-itens = armas_armaduras("MÃO", "SEM ARMADURA")
+itens = armas_armaduras("MÃO", "SEM ARMADURA", "ESPINHOS")
 jogador = Personagem("HUMANO","MORENO", 145, 100, 0, 0, "SIGMA")
 inimigo = 100

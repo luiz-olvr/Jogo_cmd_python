@@ -24,4 +24,4 @@ def JogarDado():
    return randint(1, 20)
 
 def AcaoInimigo():
-   return randint(1,4)
+   return randint(1,8)
