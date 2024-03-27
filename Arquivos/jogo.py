@@ -38,26 +38,26 @@ while True:
             action = AcaoInimigo()
             if action == 1:
                 jogador.vida -=4
-                print(f"\nSua vida atual \033[32m{jogador.vida}\033[m\n")
+                print(f"\nO inimigo te bateu\nSua vida atual é: \033[32m{jogador.vida}\033[m\n")
             if AcaoInimigo() == 2:
                 pass
             escolha = str(input("O que você ira fazer?"))
             if escolha == "a":
-                if action == 2:
+                if action == 2 or action == 4:
                     print("\nO inimigo esquivou\n")
                 else:    
                     if itens.arma == "ADAGA":
                         inimigo -=2
-                        print(f"\nVida atual do inimigo \033[31m{inimigo}\033[m\n")
+                        print(f"\nVida atual do inimigo: \033[31m{inimigo}\033[m\n")
                     elif itens.arma == "ESPADA CURTA":
                         inimigo -=5
-                        print(f"\nVida atual do inimigo \033[31m{inimigo}\033[m\n")
+                        print(f"\nVida atual do inimigo: \033[31m{inimigo}\033[m\n")
                     elif itens.arma == "ESPADA LONGA":
                         inimigo -=10
-                        print(f"\nVida atual do inimigo \033[31m{inimigo}\033[m\n")  
+                        print(f"\nVida atual do inimigo: \033[31m{inimigo}\033[m\n")  
                     elif itens.arma == "MÃO":
                         inimigo -=0.1
-                        print(f"\nVida atual do inimigo \033[31m{inimigo:.1f}\033[m\n") 
+                        print(f"\nVida atual do inimigo: \033[31m{inimigo:.1f}\033[m\n") 
         else:
             print("O Teste de combate acabou!")
             sleep(2)
