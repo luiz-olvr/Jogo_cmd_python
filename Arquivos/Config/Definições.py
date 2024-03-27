@@ -1,16 +1,16 @@
-from random import randint
-from Config.Funções import JogarDado
+from Config.Funções import JogarDado, AcaoInimigo, sleep
 class Personagem:
-   def __init__(self,raca, cor, tamanho, arma, armadura): 
+   def __init__(self,raca, cor, tamanho, vida, força, agilidade, sentimentos): 
       self.tamanho = tamanho
       self.cor = cor
       self.ListaCor = ["AMARELO", "VERMELHO", "AZUL", "VERDE", "ROSA", "MORENO"]
       self.raca = raca
       self.ListaRaca = ["HUMANO", "ORC", "GIGANTE", "DRAGONETE", "FADA"]
-      self.arma = arma
-      self.ListaArma = ["MÃO", "ESPADA CURTA", "ESPADA LONGA", "ADAGA"]
-      self.armadura = armadura
-      self.ListaArmadura = ["ARMADURA LEVE", "ARMADURA PESADA", "SEM ARMADURA"]
+      self.força = força
+      self.agilidade = agilidade
+      self.vida = vida
+      self.sentimentos = sentimentos
+      self.ListaSentimentos = ["RAIVA", "TRISTEZA", "ALEGRIA", "CONFUSO", "MEDO"]
       
    def Mudarcor(self, nova_cor):
       if nova_cor in self.ListaCor:
@@ -29,6 +29,23 @@ class Personagem:
          self.raca = nova_raca
       else:
          print("Raça invalida!")
+   
+   def MostrarInfo(self):
+        print(f"\n\nCor: {self.cor}")
+        print(f"Altura: \033[36m{self.tamanho}\033[mcm")
+        print(f"Raça: \033[1;37m{self.raca}\033[m")
+        print(f"Vida: \033[35m{self.vida}\033[m")
+        print(f"Agilidade: \033[33m{self.agilidade}\033[m")
+        print(f"Força: \033[33m{self.força}\033[m")
+        print(f"Arma: \033[0;31m{itens.arma}\033[m")
+        print(f"Armadura: \033[32m{itens.armadura}\033[m \n\n")
+        
+class armas_armaduras:
+   def __init__(self, arma, armadura):
+      self.arma = arma
+      self.ListaArma = ["MÃO", "ESPADA CURTA", "ESPADA LONGA", "ADAGA"]
+      self.armadura = armadura
+      self.ListaArmadura = ["ARMADURA LEVE", "ARMADURA PESADA", "SEM ARMADURA"]
       
    def MudarArma(self, nova_arma):
       if nova_arma in self.ListaArma:
@@ -37,13 +54,15 @@ class Personagem:
    def MudarArmadura(self, nova_armadura):
       if nova_armadura in self.ListaArmadura:
          self.armadura = nova_armadura
+      
+   def MostrarArmas(self):
+      for i in self.ListaArma:
+         print(f"\n \033[0;32m{i}\033[m")
    
-   def MostrarInfo(self):
-        print(self.cor)
-        print(self.tamanho,"cm")
-        print(self.raca)
-        print(self.arma)
-        print(self.armadura)
-       
+   def MostrarArmaduras(self):
+      for i in self.ListaArmadura:
+         print(f"\n \033[0;32m{i}\033[m")
 
-cliente = Personagem("HUMANO","MORENO", 145, "MÃO", "SEM ARMADURA")
+itens = armas_armaduras("MÃO", "SEM ARMADURA")
+jogador = Personagem("HUMANO","MORENO", 145, 100, 0, 0, "SIGMA")
+inimigo = 100

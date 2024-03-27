@@ -1,4 +1,6 @@
 from random import randint
+from time import sleep
+
 def PerguntaNome():
    str(input("Digite seu nome: "))
    
@@ -20,3 +22,6 @@ def ParImpar():
 
 def JogarDado():
    return randint(1, 20)
+
+def AcaoInimigo():
+   return randint(1,3)
