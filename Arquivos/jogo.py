@@ -36,6 +36,10 @@ while True:
     if jogador.vida <=0:
         print("\nVOCÊ MORREU!!!\n")
         break
+    print("*"*20)
+    print(f"Sua vida: \033[32m{jogador.vida}\033[m".center(5))
+    print(f"Vida do inimigo: \033[31m{Inimigo.vida}\033[m".center(5))
+    print("*"*20)
     action = AcaoInimigo()
     if esp != 0 and esp <= 4 and action != 5:
         Inimigo.vida -= 3
@@ -44,10 +48,11 @@ while True:
         print(f"\nVida atual do inimigo: \033[31m{Inimigo.vida}\033[m\n")
     if esp == 4:
         esp = 0
-    if action == 5:
+    if action == 5 and esp !=0:
         esp =0
         print("\nSeu inimigo tirou os espinhos da arena!\n")
     if action == 7 and esp != 0:
+        esp = 0
         print("\n Seu inimigo joga os espinhos em você causando grande dano!\n")
         if itens.armadura == "SEM ARMADURA":
             jogador.vida -= 21
@@ -85,7 +90,7 @@ while True:
                 print("\nO inimigo esquivou\n")
             else:    
                 if itens.arma == "ADAGA":
-                    Inimigo -=2
+                    Inimigo.vida -=2
                     print(f"\nVida atual do inimigo: \033[31m{Inimigo.vida}\033[m\n")
                 elif itens.arma == "ESPADA CURTA":
                     Inimigo.vida -=5
@@ -107,8 +112,11 @@ while True:
             print(f"\nVocê usou uma poção de vida, sua vida atual é {jogador.vida}\n")
         elif potion ==3:
             print("Suas poções acabaram\n")
+
+
     else:
         break
+
 while True:
     print("O Teste de combate acabou!")
     sleep(2)

@@ -71,3 +71,4 @@ itens = armas_armaduras("MÃO", "SEM ARMADURA", "ESPINHOS", "VIDA")
 jogador = Personagem("HUMANO","MORENO", 145, 100, 0, 0, "SIGMA")
 ItesnInimigo = armas_armaduras("MÃO", "SEM ARMADURA", "ESPINHOS", "VIDA")
 Inimigo = Personagem("HUMANO","MORENO", 145, 100, 0, 0, "SIGMA")
+
