@@ -1,4 +1,4 @@
-from Config.Funções import JogarDado, AcaoInimigo, sleep
+from Config.Funções import JogarDado, AcaoInimigo, sleep, PontoInimigo, ArmaduraIN, ArmasIN
 class Personagem:
    def __init__(self,raca, cor, tamanho, vida, força, agilidade, sentimentos): 
       self.tamanho = tamanho
@@ -68,7 +68,33 @@ class armas_armaduras:
          print(f"\n \033[0;32m{i}\033[m")
 
 itens = armas_armaduras("MÃO", "SEM ARMADURA", "ESPINHOS", "VIDA")
-jogador = Personagem("HUMANO","MORENO", 145, 100, 0, 0, "SIGMA")
+jogador = Personagem("HUMANO","MORENO", 145, 100, 20, 0, "SIGMA")
 ItesnInimigo = armas_armaduras("MÃO", "SEM ARMADURA", "ESPINHOS", "VIDA")
-Inimigo = Personagem("HUMANO","MORENO", 145, 100, 0, 0, "SIGMA")
+Inimigo = Personagem("HUMANO","MORENO", 145, 100, PontoInimigo(), PontoInimigo(), "SIGMA")
 
+def MenuPersonalizacao():
+   while True:
+    print("\nPersonalização!!\n\n[ 0 ] Mudar sua cor \n[ 1 ] Mudar tamanho\n[ 2 ] Mudar raça\n[ 3 ] Mostrar Info\n[ 4 ] Trocar de arma\n[ 5 ] Trocar armadura\n[ 6 ] Terminar edição\n")  
+    escolhaComb = int(input("O que deseja fazer? "))
+    if escolhaComb == 0:
+        jogador.Mudarcor(str(input("\nDigite sua cor: ")).upper().strip())
+    elif escolhaComb == 1:
+        jogador.MudarTamanho(int(input("\nDigite seu tamanho: ")))
+    elif escolhaComb == 2:
+        jogador.MudarRaca(str(input("\nDigite sua raça: ")).upper().strip())
+    elif escolhaComb == 3:
+        jogador.MostrarInfo()
+    elif escolhaComb == 4:
+         itens.MostrarArmas()
+         itens.MudarArma(str(input("\nDigite sua arma: ")).upper().strip())
+    elif escolhaComb == 5:
+        itens.MostrarArmaduras()
+        itens.MudarArmadura(str(input("\nDigite sua armadura: ")).upper().strip())
+    elif escolhaComb == 6:
+        escolhaComb = str(input("\nTerminar edição de personagem? S/N  ")).upper().strip()[0]
+        if escolhaComb == "S":
+            break
+        elif escolhaComb == "N":
+            pass
+        else:
+            print("Opção invalida!!")

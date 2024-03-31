@@ -19,9 +19,9 @@ def ParImpar():
       return 1
    else:
       return 0
-
-def JogarDado():
-   return randint(1, 20)
-
+   
 def AcaoInimigo():
    return randint(1,8)
+
+def PontoInimigo():
+   return randint(1, 10)
